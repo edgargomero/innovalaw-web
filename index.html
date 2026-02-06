@@ -46,9 +46,44 @@
       ]
     }
     </script>
+    <style>
+      /* Critical CSS for hero - instant LCP before React mounts */
+      #hero-placeholder {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(135deg, #0a1628 0%, #002d4d 50%, #004d80 100%);
+        padding: 8rem 1rem 6rem;
+      }
+      #hero-placeholder h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        max-width: 72rem;
+      }
+      #hero-placeholder h1 em {
+        background: linear-gradient(to right, #c9a84c, #dfc77a, #c9a84c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-style: italic;
+        font-weight: 500;
+      }
+      /* Hide placeholder once React mounts */
+      #root:not(:empty) + #hero-placeholder { display: none; }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <!-- Static hero for instant LCP - hidden once React mounts -->
+    <div id="hero-placeholder">
+      <h1>Soluciones jurídicas con <em>visión estratégica</em></h1>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
