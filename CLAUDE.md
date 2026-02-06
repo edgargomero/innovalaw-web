@@ -23,7 +23,7 @@ npm run lint       # ESLint (flat config, ESLint 9)
 - **Tailwind CSS 4** — uses `@theme` directive in `src/index.css` for custom design tokens
 - **Framer Motion** — all animations (scroll-triggered, hover, entrance, mobile menu)
 - **Node.js 22** (specified in `.node-version`)
-- **Deployment:** Cloudflare Pages via GitHub Actions on push/PR to `main`
+- **Deployment:** Cloudflare Pages (auto-deploy on push to `main` via Cloudflare Git integration)
 
 ## Architecture
 
@@ -60,22 +60,19 @@ All animations use Framer Motion:
 Tailwind CSS 4 with custom theme tokens defined in `src/index.css` via `@theme`:
 - Colors: `primary` (#0170B9), `accent` (#c9a84c gold), `navy` (#0a1628), `cream` (#faf8f5), `warm-gray` (#e6e2dc)
 - Typography: **Cormorant Garamond** (serif, headings) + **DM Sans** (sans-serif, body) — loaded via Google Fonts in `index.html`
-- Custom utility classes in `index.css`: `.glass`, `.card-hover`, `.hero-gradient`, `.line-accent`, `.noise::before`, `.border-glow`, `.link-underline`
+- Custom utility classes in `index.css`: `.glass`, `.card-hover`, `.hero-gradient`, `.line-accent`, `.noise::before`, `.link-underline`
 
 ### Component Conventions
 
 - Functional components only, TypeScript interfaces for all props
 - Props destructured in function signature
-- Data arrays (services, stats, features) defined inline within their organism component
+- Data arrays (services, stats, features, contact info, social links) defined as module-level constants outside components
 - Exportable type interfaces (e.g., `ServiceProps`) when reused
 
 ## Deployment
 
-Push to `main` triggers `.github/workflows/deploy.yml`:
-1. Node.js 22 setup
-2. `npm ci` → `npm run build`
-3. Deploy `dist/` to Cloudflare Pages (`innovalaw-web` project)
+Cloudflare Pages is connected directly to this GitHub repo. Every push to `main` triggers an automatic build and deploy via Cloudflare's Git integration (no GitHub Actions needed).
 
-Required GitHub secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
-
-Manual deploy: `npx wrangler pages deploy dist --project-name=innovalaw-web`
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Project name:** `innovalaw-web`
