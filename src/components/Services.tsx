@@ -88,14 +88,14 @@ const Services = () => {
               transition={{ duration: 0.7, delay: index * 0.1 }}
               className="group border-t border-warm-gray last:border-b"
             >
-              <div className="py-14 lg:py-18 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+              <div className="py-14 lg:py-18 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center text-center">
                 {/* Number */}
-                <div className="md:col-span-1">
+                <div className="md:col-span-1 flex justify-center">
                   <span className="text-base text-accent font-semibold tracking-wider">{service.id}</span>
                 </div>
 
                 {/* Title */}
-                <div className="md:col-span-11 lg:col-span-3">
+                <div className="md:col-span-11 lg:col-span-3 flex flex-col items-center">
                   <h3 className="text-3xl lg:text-4xl font-['Cormorant_Garamond'] font-bold text-primary-deeper group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
@@ -106,14 +106,14 @@ const Services = () => {
 
                 {/* Description */}
                 <div className="md:col-span-7 lg:col-span-4">
-                  <p className="text-slate/80 leading-[1.8] text-sm sm:text-base">
+                  <p className="text-slate/80 leading-[1.8] text-sm sm:text-base px-4">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Features */}
-                <div className="md:col-span-4 lg:col-span-3">
-                  <ul className="space-y-2">
+                <div className="md:col-span-4 lg:col-span-3 flex justify-center">
+                  <ul className="space-y-2 flex flex-col items-center">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm text-slate/80 group-hover:text-slate/80 transition-colors">
                         <span className="w-1 h-1 bg-accent rounded-full flex-shrink-0" />
@@ -124,7 +124,7 @@ const Services = () => {
                 </div>
 
                 {/* Arrow */}
-                <div className="md:col-span-1 flex md:justify-end">
+                <div className="md:col-span-1 flex justify-center">
                   <motion.div
                     className="w-10 h-10 border border-warm-gray rounded-full flex items-center justify-center group-hover:border-accent group-hover:bg-accent transition-all duration-300"
                     whileHover={{ scale: 1.1 }}

@@ -69,10 +69,10 @@ const About = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-10 lg:pt-8"
+            className="flex flex-col gap-10 lg:pt-8 items-center text-center"
           >
             {/* Features list */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 w-full max-w-lg mx-auto">
               {[
                 'Atención personalizada 24/7',
                 'Múltiples áreas del derecho',
@@ -84,12 +84,10 @@ const About = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.08 }}
-                  className="flex items-center gap-3"
+                  className="flex items-center justify-center gap-3 bg-white/5 py-4 px-4 rounded-sm border border-white/5"
                 >
-                  <div className="w-5 h-5 rounded-full border border-accent/40 flex items-center justify-center flex-shrink-0">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                  </div>
-                  <span className="text-white/80 text-sm">{feature}</span>
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0" />
+                  <span className="text-white/90 text-sm font-medium">{feature}</span>
                 </motion.div>
               ))}
             </div>
@@ -121,7 +119,7 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.12 }}
                 className="group p-6 sm:p-8 border border-white/8 hover:border-accent/20 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500"
               >
-                <div className="flex items-start gap-6">
+                <div className="flex flex-col items-center text-center gap-4">
                   <div className="w-12 h-12 border border-accent/30 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/10 transition-colors duration-300">
                     <svg
                       className="w-5 h-5 text-accent"
