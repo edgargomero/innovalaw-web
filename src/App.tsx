@@ -1,23 +1,23 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Stats from './components/Stats'
-import Services from './components/Services'
-import About from './components/About'
-import CTA from './components/CTA'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import Navbar from './components/organisms/Navbar'
+import HeroSection from './components/organisms/HeroSection'
+import StatsSection from './components/organisms/StatsSection'
+import ServicesSection from './components/organisms/ServicesSection'
+import AboutSection from './components/organisms/AboutSection'
+import CTA from './components/organisms/CTA'
+import ContactSection from './components/organisms/ContactSection'
+import Footer from './components/organisms/Footer'
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen gap-0 md:gap-0 lg:gap-0 relative">
       <Navbar />
       <main className="flex-grow">
-        <Hero />
-        <Stats />
-        <Services />
-        <About />
+        <HeroSection />
+        <StatsSection />
+        <ServicesSection />
+        <AboutSection />
         <CTA />
-        <Contact />
+        <ContactSection />
       </main>
       <Footer />
     </div>
