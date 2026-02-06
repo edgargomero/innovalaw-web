@@ -9,14 +9,16 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen gap-0 md:gap-0 lg:gap-0 relative">
       <Navbar />
-      <Hero />
-      <Stats />
-      <Services />
-      <About />
-      <CTA />
-      <Contact />
+      <main className="flex-grow">
+        <Hero />
+        <Stats />
+        <Services />
+        <About />
+        <CTA />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )
