@@ -31,11 +31,11 @@ const Contact = () => {
     },
   ]
 
-  const inputClasses = 'w-full px-0 py-4 bg-transparent border-0 border-b border-warm-gray text-slate placeholder:text-slate/30 text-sm transition-all duration-300 focus:border-accent'
+  const inputClasses = 'w-full px-1 sm:px-2 py-4 bg-transparent border-0 border-b border-warm-gray text-slate placeholder:text-slate/45 text-sm transition-all duration-300 focus:border-accent'
 
   return (
-    <section id="contacto" className="py-24 lg:py-32 bg-white relative noise">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="contacto" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white relative noise">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
           {/* Left column - Info */}
           <motion.div
@@ -51,7 +51,7 @@ const Contact = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05] mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05] mb-8">
               Conversemos sobre{' '}
               <span className="italic font-medium text-accent">tu caso</span>
             </h2>
@@ -123,7 +123,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-7"
           >
-            <form onSubmit={handleSubmit} className="space-y-2">
+            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                 <div>
                   <input type="text" required placeholder="Nombre" className={inputClasses} />

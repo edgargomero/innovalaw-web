@@ -106,6 +106,11 @@ h1, h2, h3, h4, h5, h6 {
   background: #b8943f;
 }
 
+/* --- Placeholder contrast minimum (WCAG) --- */
+::placeholder {
+  color: rgba(30, 41, 59, 0.45);
+}
+
 /* --- Focus styles --- */
 input:focus, select:focus, textarea:focus {
   outline: none;

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const CTA = () => {
   return (
-    <section className="py-24 lg:py-32 bg-cream relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-cream relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
@@ -12,7 +12,7 @@ const CTA = () => {
         <div className="absolute bottom-12 right-12 w-20 h-20 border-b border-r border-accent/15 hidden lg:block" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10 text-center">
+      <div className="max-w-4xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const CTA = () => {
             <div className="h-[1px] w-12 bg-accent" />
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05] mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05] mb-8">
             ¿Necesitas{' '}
             <span className="italic font-medium text-accent">asesoría legal</span>
             ?

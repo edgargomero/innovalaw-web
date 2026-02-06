@@ -51,7 +51,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-10 w-full">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <motion.div
@@ -71,7 +71,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-5xl sm:text-6xl lg:text-[5.5rem] leading-[0.95] font-bold text-white mb-8"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.95] font-bold text-white mb-8"
           >
             Protegemos{' '}
             <span className="italic font-medium text-accent-light">tus derechos</span>
@@ -84,7 +84,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg lg:text-xl text-white/60 max-w-xl mb-12 leading-relaxed"
+            className="text-lg lg:text-xl text-white/70 max-w-xl mb-12 leading-relaxed"
           >
             Asesoramiento jurídico integral en migración, derecho corporativo,
             financiero y personas. Más de una década de compromiso con tu tranquilidad.
@@ -125,7 +125,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
-          className="mt-20 pt-8 border-t border-white/10 flex flex-wrap gap-12 lg:gap-20"
+          className="mt-16 sm:mt-20 pt-8 border-t border-white/10 flex flex-wrap gap-8 sm:gap-12 lg:gap-20"
         >
           {[
             { number: '10+', label: 'Años de experiencia' },

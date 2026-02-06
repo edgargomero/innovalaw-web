@@ -24,7 +24,7 @@ const About = () => {
   ]
 
   return (
-    <section id="nosotros" className="py-24 lg:py-32 bg-primary-deeper relative overflow-hidden noise">
+    <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-primary-deeper relative overflow-hidden noise">
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-primary-dark/30 rounded-full blur-[120px]" />
@@ -33,8 +33,8 @@ const About = () => {
         <div className="absolute top-0 right-[30%] w-[1px] h-full bg-gradient-to-b from-transparent via-white/5 to-transparent hidden lg:block" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10" ref={ref}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-10" ref={ref}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
           {/* Left column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -48,7 +48,7 @@ const About = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-8">
               Más de una década{' '}
               <span className="italic font-medium text-accent-light">defendiendo</span>{' '}
               tus intereses
@@ -108,7 +108,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.12 }}
-                className="group p-8 border border-white/8 hover:border-accent/20 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500"
+                className="group p-6 sm:p-8 border border-white/8 hover:border-accent/20 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500"
               >
                 <div className="flex items-start gap-6">
                   <div className="w-12 h-12 border border-accent/30 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/10 transition-colors duration-300">
@@ -125,7 +125,7 @@ const About = () => {
                     <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-white mb-2 group-hover:text-accent-light transition-colors duration-300">
                       {value.title}
                     </h3>
-                    <p className="text-white/40 leading-relaxed text-sm">
+                    <p className="text-white/50 leading-relaxed text-sm">
                       {value.text}
                     </p>
                   </div>
@@ -138,7 +138,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="p-8 border-l-2 border-accent bg-accent/5"
+              className="p-6 sm:p-8 border-l-2 border-accent bg-accent/5"
             >
               <p className="text-white/70 italic text-lg font-['Cormorant_Garamond'] leading-relaxed">
                 "Nuestra misión es brindarte tranquilidad, asesoramiento y apoyo

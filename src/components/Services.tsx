@@ -41,8 +41,8 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="servicios" className="py-24 lg:py-32 bg-white relative noise">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="servicios" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white relative noise">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           <motion.div
@@ -57,7 +57,7 @@ const Services = () => {
                 Áreas de Práctica
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05]">
               Servicios jurídicos{' '}
               <span className="italic font-medium text-accent">especializados</span>
             </h2>
@@ -86,14 +86,14 @@ const Services = () => {
               transition={{ duration: 0.7, delay: index * 0.1 }}
               className="group border-t border-warm-gray last:border-b"
             >
-              <div className="py-10 lg:py-14 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+              <div className="py-10 lg:py-14 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
                 {/* Number */}
-                <div className="lg:col-span-1">
+                <div className="md:col-span-1">
                   <span className="text-sm text-accent font-medium">{service.id}</span>
                 </div>
 
                 {/* Title */}
-                <div className="lg:col-span-3">
+                <div className="md:col-span-11 lg:col-span-3">
                   <h3 className="text-3xl lg:text-4xl font-['Cormorant_Garamond'] font-bold text-primary-deeper group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
@@ -103,14 +103,14 @@ const Services = () => {
                 </div>
 
                 {/* Description */}
-                <div className="lg:col-span-4">
+                <div className="md:col-span-7 lg:col-span-4">
                   <p className="text-slate/60 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Features */}
-                <div className="lg:col-span-3">
+                <div className="md:col-span-4 lg:col-span-3">
                   <ul className="space-y-2">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm text-slate/50 group-hover:text-slate/70 transition-colors">
@@ -122,7 +122,7 @@ const Services = () => {
                 </div>
 
                 {/* Arrow */}
-                <div className="lg:col-span-1 flex lg:justify-end">
+                <div className="md:col-span-1 flex md:justify-end">
                   <motion.div
                     className="w-10 h-10 border border-warm-gray rounded-full flex items-center justify-center group-hover:border-accent group-hover:bg-accent transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
