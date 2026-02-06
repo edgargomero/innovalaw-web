@@ -1,11 +1,17 @@
 @import "tailwindcss";
 
-:root {
-  --color-primary-dark: #005a8d;
+@theme {
   --color-primary: #0170B9;
+  --color-primary-dark: #004d80;
+  --color-primary-deeper: #002d4d;
   --color-primary-light: #3498db;
-  --color-gray-dark: #3a3a3a;
-  --color-gray-medium: #4B4F58;
+  --color-accent: #c9a84c;
+  --color-accent-light: #dfc77a;
+  --color-navy: #0a1628;
+  --color-navy-light: #132240;
+  --color-slate: #1e293b;
+  --color-cream: #faf8f5;
+  --color-warm-gray: #f0ece6;
 }
 
 * {
@@ -14,40 +20,114 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #1e293b;
+  background: #faf8f5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.gradient-primary {
-  background: linear-gradient(135deg, #005a8d 0%, #0170B9 100%);
+/* --- Decorative line --- */
+.line-accent {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #c9a84c, transparent);
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #005a8d 0%, #0170B9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* --- Gradient overlay for hero --- */
+.hero-gradient {
+  background: linear-gradient(
+    160deg,
+    #002d4d 0%,
+    #004d80 35%,
+    #0170B9 70%,
+    #004d80 100%
+  );
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+/* --- Gold shimmer text --- */
+.text-gold {
+  color: #c9a84c;
 }
 
-.float {
-  animation: float 6s ease-in-out infinite;
+/* --- Noise texture overlay --- */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
 }
 
-html {
-  scroll-behavior: smooth;
+/* --- Subtle border glow --- */
+.border-glow {
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.05);
+}
+
+/* --- Glass card --- */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* --- Custom selection color --- */
+::selection {
+  background: rgba(1, 112, 185, 0.2);
+  color: #002d4d;
+}
+
+/* --- Custom scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a84c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8943f;
+}
+
+/* --- Focus styles --- */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #c9a84c !important;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+/* --- Animated underline --- */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #c9a84c;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-underline:hover::after {
+  width: 100%;
 }

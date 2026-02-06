@@ -1,139 +1,162 @@
-import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const Hero = () => {
-  useEffect(() => {
-    const createParticle = () => {
-      const particle = document.createElement('div')
-      particle.className = 'particle'
-      particle.style.left = Math.random() * 100 + '%'
-      particle.style.animationDuration = Math.random() * 3 + 2 + 's'
-      particle.style.opacity = String(Math.random() * 0.5 + 0.2)
-      document.querySelector('.particles')?.appendChild(particle)
-
-      setTimeout(() => particle.remove(), 5000)
-    }
-
-    const interval = setInterval(createParticle, 300)
-    return () => clearInterval(interval)
-  }, [])
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  }
-
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center gradient-primary overflow-hidden"
+      className="relative min-h-screen flex items-end pb-24 lg:pb-32 hero-gradient noise overflow-hidden"
     >
-      <div className="particles absolute inset-0 pointer-events-none" />
-
-      <style>{`
-        .particle {
-          position: absolute;
-          width: 4px;
-          height: 4px;
-          background: white;
-          border-radius: 50%;
-          bottom: -10px;
-          animation: rise linear forwards;
-        }
-
-        @keyframes rise {
-          to {
-            bottom: 110%;
-            transform: translateX(${Math.random() * 100 - 50}px);
-          }
-        }
-      `}</style>
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="container mx-auto px-4 text-center relative z-10"
-      >
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold text-white mb-6"
-        >
-          InnovaLaw
-        </motion.h1>
-
-        <motion.p
-          variants={itemVariants}
-          className="text-2xl md:text-3xl text-white/90 mb-4"
-        >
-          Abogados en Santiago a tu alcance
-        </motion.p>
-
-        <motion.p
-          variants={itemVariants}
-          className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto"
-        >
-          Estudio jurídico diseñado para brindarte tranquilidad, asesoramiento y
-          apoyo en tus necesidades legales
-        </motion.p>
-
+      {/* Decorative geometric elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large circle */}
         <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <motion.a
-            href="#contacto"
-            className="px-8 py-4 bg-white text-[#0170B9] rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Contáctanos
-          </motion.a>
-
-          <motion.a
-            href="#servicios"
-            className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#0170B9] transition-all"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Nuestros Servicios
-          </motion.a>
-        </motion.div>
-
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.04, scale: 1 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute -top-[20%] -right-[15%] w-[70vw] h-[70vw] border border-white rounded-full"
+        />
+        {/* Second circle */}
         <motion.div
-          className="mt-16"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          <svg
-            className="w-6 h-6 mx-auto text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.03, scale: 1 }}
+          transition={{ duration: 2, delay: 0.8 }}
+          className="absolute -top-[10%] -right-[10%] w-[50vw] h-[50vw] border border-white rounded-full"
+        />
+        {/* Diagonal line */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 1 }}
+          className="absolute top-[45%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent origin-left"
+        />
+        {/* Vertical accent line */}
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 1.2, delay: 1.2 }}
+          className="absolute top-0 left-[15%] w-[1px] h-full bg-gradient-to-b from-transparent via-white/5 to-transparent origin-top hidden lg:block"
+        />
+        {/* Gold dot grid */}
+        <div className="absolute bottom-20 right-12 hidden lg:grid grid-cols-5 gap-3 opacity-20">
+          {Array.from({ length: 25 }).map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5 + i * 0.03 }}
+              className="w-1 h-1 bg-accent rounded-full"
             />
-          </svg>
+          ))}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
+        <div className="max-w-3xl">
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex items-center gap-4 mb-8"
+          >
+            <div className="h-[1px] w-12 bg-accent" />
+            <span className="text-accent text-xs uppercase tracking-[0.3em] font-medium">
+              Estudio Jurídico de Excelencia
+            </span>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-5xl sm:text-6xl lg:text-[5.5rem] leading-[0.95] font-bold text-white mb-8"
+          >
+            Protegemos{' '}
+            <span className="italic font-medium text-accent-light">tus derechos</span>
+            <br />
+            con excelencia
+          </motion.h1>
+
+          {/* Subheading */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-lg lg:text-xl text-white/60 max-w-xl mb-12 leading-relaxed"
+          >
+            Asesoramiento jurídico integral en migración, derecho corporativo,
+            financiero y personas. Más de una década de compromiso con tu tranquilidad.
+          </motion.p>
+
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <motion.a
+              href="#contacto"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-accent text-primary-deeper text-sm font-semibold tracking-wide uppercase hover:bg-accent-light transition-all duration-300"
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Agendar Consulta
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </motion.a>
+
+            <motion.a
+              href="#servicios"
+              className="inline-flex items-center gap-3 px-8 py-4 border border-white/20 text-white text-sm tracking-wide uppercase hover:border-accent/50 hover:text-accent transition-all duration-300"
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Explorar Servicios
+            </motion.a>
+          </motion.div>
+        </div>
+
+        {/* Bottom bar with stats teaser */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+          className="mt-20 pt-8 border-t border-white/10 flex flex-wrap gap-12 lg:gap-20"
+        >
+          {[
+            { number: '10+', label: 'Años de experiencia' },
+            { number: '24/7', label: 'Atención personalizada' },
+            { number: '100%', label: 'Confidencialidad' },
+          ].map((stat) => (
+            <div key={stat.label} className="flex items-baseline gap-3">
+              <span className="text-3xl lg:text-4xl font-['Cormorant_Garamond'] font-bold text-white">
+                {stat.number}
+              </span>
+              <span className="text-xs uppercase tracking-[0.15em] text-white/40">
+                {stat.label}
+              </span>
+            </div>
+          ))}
         </motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.3em] text-white/30">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: [0.45, 0, 0.55, 1] }}
+          className="w-[1px] h-8 bg-gradient-to-b from-accent/60 to-transparent"
+        />
       </motion.div>
     </section>
   )
