@@ -58,7 +58,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex items-center gap-4 mb-8"
+            className="flex items-center gap-4 mb-6"
           >
             <div className="h-[1px] w-12 bg-accent" />
             <span className="text-accent text-xs uppercase tracking-[0.3em] font-medium">
@@ -71,10 +71,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] font-bold text-white mb-12"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.15] font-bold text-white mb-10"
           >
             Protegemos{' '}
-            <span className="italic font-medium text-accent-light">tus derechos</span>
+            <span className="text-accent-light">tus derechos</span>
             <br />
             con excelencia
           </motion.h1>
@@ -84,7 +84,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg lg:text-xl text-white/70 max-w-xl mb-16 leading-[1.8]"
+            className="text-lg lg:text-xl text-white/80 max-w-xl mb-16 leading-[1.8]"
           >
             Asesoramiento jurídico integral en migración, derecho corporativo,
             financiero y personas. Más de una década de compromiso con tu tranquilidad.
@@ -111,7 +111,7 @@ const Hero = () => {
 
             <motion.a
               href="#servicios"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-white/20 text-white text-sm tracking-wide uppercase hover:border-accent/50 hover:text-accent transition-all duration-300"
+              className="inline-flex items-center gap-3 px-8 py-4 border border-white/30 text-white/90 text-sm tracking-wide uppercase hover:border-accent hover:text-accent transition-all duration-300"
               whileHover={{ x: 4 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -125,7 +125,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
-          className="mt-16 sm:mt-20 pt-8 border-t border-white/10 flex flex-wrap gap-8 sm:gap-12 lg:gap-20"
+          className="mt-20 sm:mt-24 pt-8 border-t border-white/10 flex flex-wrap gap-8 sm:gap-12 lg:gap-20"
         >
           {[
             { number: '10+', label: 'Años de experiencia' },
@@ -136,7 +136,7 @@ const Hero = () => {
               <span className="text-3xl lg:text-4xl font-['Cormorant_Garamond'] font-bold text-white">
                 {stat.number}
               </span>
-              <span className="text-xs uppercase tracking-[0.15em] text-white/40">
+              <span className="text-xs uppercase tracking-[0.15em] text-white/70">
                 {stat.label}
               </span>
             </div>
@@ -151,7 +151,7 @@ const Hero = () => {
         transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-white/30">Scroll</span>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: [0.45, 0, 0.55, 1] }}

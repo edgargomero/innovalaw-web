@@ -131,10 +131,10 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="py-6 border-t border-white/15 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/45 text-xs tracking-wide">
+          <p className="text-white/60 text-xs tracking-wide">
             &copy; {currentYear} InnovaLaw. Todos los derechos reservados.
           </p>
-          <p className="text-white/35 text-xs tracking-wide">
+          <p className="text-white/50 text-xs tracking-wide">
             Diseñado con excelencia
           </p>
         </div>

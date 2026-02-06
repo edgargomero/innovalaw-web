@@ -33,7 +33,7 @@ const CTA = () => {
             ?
           </h2>
 
-          <p className="text-slate/50 text-base sm:text-lg leading-[1.8] max-w-xl mx-auto mb-12">
+          <p className="text-slate/60 text-base sm:text-lg leading-[1.8] max-w-xl mx-auto mb-12">
             Agenda una consulta con nuestros especialistas y recibe orientación
             personalizada para tu caso. Sin compromiso.
           </p>

@@ -86,10 +86,10 @@ const Services = () => {
               transition={{ duration: 0.7, delay: index * 0.1 }}
               className="group border-t border-warm-gray last:border-b"
             >
-              <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+              <div className="py-14 lg:py-18 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
                 {/* Number */}
                 <div className="md:col-span-1">
-                  <span className="text-sm text-accent font-medium">{service.id}</span>
+                  <span className="text-base text-accent font-semibold tracking-wider">{service.id}</span>
                 </div>
 
                 {/* Title */}
@@ -128,7 +128,7 @@ const Services = () => {
                     whileHover={{ scale: 1.1 }}
                   >
                     <svg
-                      className="w-4 h-4 text-slate/30 group-hover:text-white transition-colors duration-300"
+                      className="w-4 h-4 text-slate/60 group-hover:text-white transition-colors duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

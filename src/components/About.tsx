@@ -54,7 +54,7 @@ const About = () => {
               tus intereses
             </h2>
 
-            <p className="text-white/50 text-base sm:text-lg leading-[1.8] mb-12 max-w-lg">
+            <p className="text-white/60 text-base sm:text-lg leading-[1.8] mb-12 max-w-lg">
               Somos un estudio jurídico diseñado para brindarte tranquilidad.
               Nuestro equipo de especialistas enfatiza ética, moral y buen gobierno
               corporativo en cada solución que construimos para ti.
@@ -125,7 +125,7 @@ const About = () => {
                     <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-white mb-2 group-hover:text-accent-light transition-colors duration-300">
                       {value.title}
                     </h3>
-                    <p className="text-white/50 leading-[1.8] text-sm sm:text-base">
+                    <p className="text-white/60 leading-[1.8] text-sm sm:text-base">
                       {value.text}
                     </p>
                   </div>

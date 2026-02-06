@@ -24,7 +24,7 @@ const Stats = () => {
   ]
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-cream relative">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-warm-gray relative">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16" ref={ref}>
         {/* Section label */}
         <motion.div
@@ -39,14 +39,14 @@ const Stats = () => {
           </span>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
           {items.map((item, index) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: index * 0.15 }}
-              className={`group relative py-10 md:py-0 md:px-10 ${
+              className={`group relative py-12 md:py-14 md:px-10 h-full flex flex-col ${
                 index < items.length - 1
                   ? 'border-b md:border-b-0 md:border-r border-warm-gray'
                   : ''
@@ -55,7 +55,7 @@ const Stats = () => {
               <span className="text-6xl font-['Cormorant_Garamond'] font-bold text-warm-gray group-hover:text-accent/30 transition-colors duration-500">
                 {item.number}
               </span>
-              <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-primary-deeper mt-6 mb-4">
+              <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-primary-deeper mt-4 mb-4">
                 {item.title}
               </h3>
               <p className="text-slate/60 leading-[1.8] text-sm sm:text-base">
