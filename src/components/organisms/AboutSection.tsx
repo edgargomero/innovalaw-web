@@ -46,7 +46,7 @@ const AboutSection = () => {
                     eyebrow="Nuestra Identidad"
                     title={<>Más que abogados, <span className="text-accent italic">aliados estratégicos</span></>}
                     centered
-                    light // Custom prop I added to Atom
+                    light
                 />
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-start">
@@ -75,7 +75,7 @@ const AboutSection = () => {
 
                         <div className="flex justify-center">
                             <Button href="#contacto" variant="primary">
-                                Conocer Equipo
+                                Contáctanos
                             </Button>
                         </div>
                     </motion.div>

@@ -4,182 +4,78 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a JavaScript/TypeScript project optimized for modern web development. The project uses industry-standard tools and follows best practices for scalable application development.
+InnovaLaw corporate website — a law firm in Santiago, Chile specializing in legal consulting. Single-page application in Spanish with smooth-scroll anchor navigation between sections. No routing library; sections are navigated via `#inicio`, `#servicios`, `#nosotros`, `#contacto` anchors.
 
-## Development Commands
+## Commands
 
-### Package Management
-- `npm install` or `yarn install` - Install dependencies
-- `npm ci` or `yarn install --frozen-lockfile` - Install dependencies for CI/CD
-- `npm update` or `yarn upgrade` - Update dependencies
-
-### Build Commands
-- `npm run build` - Build the project for production
-- `npm run dev` or `npm start` - Start development server
-- `npm run preview` - Preview production build locally
-
-### Testing Commands
-- `npm test` or `npm run test` - Run all tests
-- `npm run test:watch` - Run tests in watch mode
-- `npm run test:coverage` - Run tests with coverage report
-- `npm run test:unit` - Run unit tests only
-- `npm run test:integration` - Run integration tests only
-- `npm run test:e2e` - Run end-to-end tests
-
-### Code Quality Commands
-- `npm run lint` - Run ESLint for code linting
-- `npm run lint:fix` - Run ESLint with auto-fix
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-- `npm run typecheck` - Run TypeScript type checking
-
-### Development Tools
-- `npm run storybook` - Start Storybook (if available)
-- `npm run analyze` - Analyze bundle size
-- `npm run clean` - Clean build artifacts
-
-## Technology Stack
-
-### Core Technologies
-- **JavaScript/TypeScript** - Primary programming languages
-- **Node.js** - Runtime environment
-- **npm/yarn** - Package management
-
-### Common Frameworks
-- **React** - UI library with hooks and functional components
-- **Vue.js** - Progressive framework for building user interfaces
-- **Angular** - Full-featured framework for web applications
-- **Express.js** - Web application framework for Node.js
-- **Next.js** - React framework with SSR/SSG capabilities
-
-### Build Tools
-- **Vite** - Fast build tool and development server
-- **Webpack** - Module bundler
-- **Rollup** - Module bundler for libraries
-- **esbuild** - Extremely fast JavaScript bundler
-
-### Testing Framework
-- **Jest** - JavaScript testing framework
-- **Vitest** - Fast unit test framework
-- **Testing Library** - Simple and complete testing utilities
-- **Cypress** - End-to-end testing framework
-- **Playwright** - Cross-browser testing
-
-### Code Quality Tools
-- **ESLint** - JavaScript/TypeScript linter
-- **Prettier** - Code formatter
-- **TypeScript** - Static type checking
-- **Husky** - Git hooks
-
-## Project Structure Guidelines
-
-### File Organization
-```
-src/
-├── components/     # Reusable UI components
-├── pages/         # Page components or routes
-├── hooks/         # Custom React hooks
-├── utils/         # Utility functions
-├── services/      # API calls and external services
-├── types/         # TypeScript type definitions
-├── constants/     # Application constants
-├── styles/        # Global styles and themes
-└── tests/         # Test files
+```bash
+npm run dev        # Start Vite dev server with HMR
+npm run build      # TypeScript check + Vite production build (tsc && vite build)
+npm run preview    # Preview production build locally
+npm run lint       # ESLint (flat config, ESLint 9)
 ```
 
-### Naming Conventions
-- **Files**: Use kebab-case for file names (`user-profile.component.ts`)
-- **Components**: Use PascalCase for component names (`UserProfile`)
-- **Functions**: Use camelCase for function names (`getUserData`)
-- **Constants**: Use UPPER_SNAKE_CASE for constants (`API_BASE_URL`)
-- **Types/Interfaces**: Use PascalCase with descriptive names (`UserData`, `ApiResponse`)
+**Note:** There are no `test`, `lint:fix`, `format`, or `typecheck` scripts configured. The `build` command runs `tsc` as the type-check step.
 
-## TypeScript Guidelines
+## Tech Stack
 
-### Type Safety
-- Enable strict mode in `tsconfig.json`
-- Use explicit types for function parameters and return values
-- Prefer interfaces over types for object shapes
-- Use union types for multiple possible values
-- Avoid `any` type - use `unknown` when type is truly unknown
+- **React 19** + **TypeScript 5.9** (strict mode) + **Vite 7**
+- **Tailwind CSS 4** — uses `@theme` directive in `src/index.css` for custom design tokens
+- **Framer Motion** — all animations (scroll-triggered, hover, entrance, mobile menu)
+- **Node.js 22** (specified in `.node-version`)
+- **Deployment:** Cloudflare Pages via GitHub Actions on push/PR to `main`
 
-### Best Practices
-- Use type guards for runtime type checking
-- Leverage utility types (`Partial`, `Pick`, `Omit`, etc.)
-- Create custom types for domain-specific data
-- Use enums for finite sets of values
-- Document complex types with JSDoc comments
+## Architecture
 
-## Code Quality Standards
+### Atomic Design Pattern
 
-### ESLint Configuration
-- Use recommended ESLint rules for JavaScript/TypeScript
-- Enable React-specific rules if using React
-- Configure import/export rules for consistent module usage
-- Set up accessibility rules for inclusive development
+Components follow atoms → molecules → organisms hierarchy:
 
-### Prettier Configuration
-- Use consistent indentation (2 spaces recommended)
-- Set maximum line length (80-100 characters)
-- Use single quotes for strings
-- Add trailing commas for better git diffs
+```
+src/components/
+├── atoms/        Button, Input, SectionTitle
+├── molecules/    ContactForm, ServiceCard, FeatureItem
+└── organisms/    Navbar, HeroSection, StatsSection, ServicesSection,
+                  AboutSection, CTA, ContactSection, Footer
+```
 
-### Testing Standards
-- Aim for 80%+ test coverage
-- Write unit tests for utilities and business logic
-- Use integration tests for component interactions
-- Implement e2e tests for critical user flows
-- Follow AAA pattern (Arrange, Act, Assert)
+`App.tsx` composes all organisms in a single vertical layout — there are no routes or pages.
 
-## Performance Optimization
+### State Management
 
-### Bundle Optimization
-- Use code splitting for large applications
-- Implement lazy loading for routes and components
-- Optimize images and assets
-- Use tree shaking to eliminate dead code
-- Analyze bundle size regularly
+Component-local state only (`useState`, `useRef`). No global state library. Key stateful components:
+- `Navbar`: `isOpen` (mobile menu), `scrolled` (scroll-based style change)
+- `ContactForm`: `submitted` (success message display)
 
-### Runtime Performance
-- Implement proper memoization (React.memo, useMemo, useCallback)
-- Use virtualization for large lists
-- Optimize re-renders in React applications
-- Implement proper error boundaries
-- Use web workers for heavy computations
+### Animation Patterns
 
-## Security Guidelines
+All animations use Framer Motion:
+- **Scroll-triggered:** `useInView(ref, { once: true, margin: '-100px' })` pattern
+- **Staggered entrance:** `delay: index * 0.1` on mapped items
+- **Hover/tap:** `whileHover`, `whileTap` props
+- **Conditional mount:** `AnimatePresence` for mobile menu toggle
 
-### Dependencies
-- Regularly audit dependencies with `npm audit`
-- Keep dependencies updated
-- Use lock files (`package-lock.json`, `yarn.lock`)
-- Avoid dependencies with known vulnerabilities
+### Styling
 
-### Code Security
-- Sanitize user inputs
-- Use HTTPS for API calls
-- Implement proper authentication and authorization
-- Store sensitive data securely (environment variables)
-- Use Content Security Policy (CSP) headers
+Tailwind CSS 4 with custom theme tokens defined in `src/index.css` via `@theme`:
+- Colors: `primary` (#0170B9), `accent` (#c9a84c gold), `navy` (#0a1628), `cream` (#faf8f5), `warm-gray` (#e6e2dc)
+- Typography: **Cormorant Garamond** (serif, headings) + **DM Sans** (sans-serif, body) — loaded via Google Fonts in `index.html`
+- Custom utility classes in `index.css`: `.glass`, `.card-hover`, `.hero-gradient`, `.line-accent`, `.noise::before`, `.border-glow`, `.link-underline`
 
-## Development Workflow
+### Component Conventions
 
-### Before Starting
-1. Check Node.js version compatibility
-2. Install dependencies with `npm install`
-3. Copy environment variables from `.env.example`
-4. Run type checking with `npm run typecheck`
+- Functional components only, TypeScript interfaces for all props
+- Props destructured in function signature
+- Data arrays (services, stats, features) defined inline within their organism component
+- Exportable type interfaces (e.g., `ServiceProps`) when reused
 
-### During Development
-1. Use TypeScript for type safety
-2. Run linter frequently to catch issues early
-3. Write tests for new features
-4. Use meaningful commit messages
-5. Review code changes before committing
+## Deployment
 
-### Before Committing
-1. Run full test suite: `npm test`
-2. Check linting: `npm run lint`
-3. Verify formatting: `npm run format:check`
-4. Run type checking: `npm run typecheck`
-5. Test production build: `npm run build`
+Push to `main` triggers `.github/workflows/deploy.yml`:
+1. Node.js 22 setup
+2. `npm ci` → `npm run build`
+3. Deploy `dist/` to Cloudflare Pages (`innovalaw-web` project)
+
+Required GitHub secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
+
+Manual deploy: `npx wrangler pages deploy dist --project-name=innovalaw-web`

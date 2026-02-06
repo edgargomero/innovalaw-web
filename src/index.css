@@ -14,12 +14,6 @@
   --color-warm-gray: #e6e2dc;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -33,7 +27,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -49,17 +48,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Gradient overlay for hero --- */
 .hero-gradient {
-  background: linear-gradient(
-    135deg,
-    #0a1628 0%,
-    #002d4d 50%,
-    #004d80 100%
-  );
-}
-
-/* --- Gold shimmer text --- */
-.text-gold {
-  color: #c9a84c;
+  background: linear-gradient(135deg,
+      #0a1628 0%,
+      #002d4d 50%,
+      #004d80 100%);
 }
 
 /* --- Noise texture overlay --- */
@@ -71,12 +63,6 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
-}
-
-/* --- Subtle border glow --- */
-.border-glow {
-  border: 1px solid rgba(201, 168, 76, 0.15);
-  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.05);
 }
 
 /* --- Glass card --- */
@@ -91,9 +77,10 @@ h1, h2, h3, h4, h5, h6 {
 .card-hover {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -4px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
 /* --- Custom selection color --- */
@@ -106,26 +93,38 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #faf8f5;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #c9a84c;
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #b8943f;
 }
 
-/* --- Placeholder contrast minimum (WCAG) --- */
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c9a84c #faf8f5;
+}
+
+/* --- Placeholder contrast (WCAG AA compliant) --- */
 ::placeholder {
-  color: rgba(30, 41, 59, 0.4);
+  color: rgba(30, 41, 59, 0.55);
 }
 
 /* --- Focus styles --- */
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #c9a84c !important;
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #c9a84c;
+  outline-offset: -1px;
+  border-color: #c9a84c;
 }
 
 /* --- Animated underline --- */
@@ -133,6 +132,7 @@ input:focus, select:focus, textarea:focus {
   position: relative;
   display: inline-block;
 }
+
 .link-underline::after {
   content: '';
   position: absolute;
@@ -143,6 +143,7 @@ input:focus, select:focus, textarea:focus {
   background: #c9a84c;
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .link-underline:hover::after {
   width: 100%;
 }

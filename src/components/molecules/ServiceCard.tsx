@@ -20,7 +20,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative bg-white border border-warm-gray p-10 lg:p-12 hover:border-accent card-hover overflow-hidden transition-colors duration-500 h-full flex flex-col"
+            className="group relative bg-white border border-warm-gray p-10 lg:p-12 hover:border-accent card-hover overflow-hidden transition-colors duration-500 h-full flex flex-col shadow-lg"
         >
             {/* Hover Overlay */}
             <div className="absolute inset-0 bg-cream opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

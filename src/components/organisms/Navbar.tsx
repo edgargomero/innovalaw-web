@@ -1,22 +1,33 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+
+const menuItems = [
+    { name: 'Inicio', href: '#inicio' },
+    { name: 'Servicios', href: '#servicios' },
+    { name: 'Nosotros', href: '#nosotros' },
+    { name: 'Contacto', href: '#contacto' },
+]
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20)
-        window.addEventListener('scroll', handleScroll)
+        let ticking = false
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 20)
+                    ticking = false
+                })
+                ticking = true
+            }
+        }
+        window.addEventListener('scroll', handleScroll, { passive: true })
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const menuItems = [
-        { name: 'Inicio', href: '#inicio' },
-        { name: 'Servicios', href: '#servicios' },
-        { name: 'Nosotros', href: '#nosotros' },
-        { name: 'Contacto', href: '#contacto' },
-    ]
+    const closeMenu = useCallback(() => setIsOpen(false), [])
 
     return (
         <motion.nav
@@ -24,7 +35,7 @@ const Navbar = () => {
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className={`fixed w-full z-50 transition-all duration-500 ${scrolled
-                ? 'bg-white/95 backdrop-blur-xl shadow-[0_1px_0_rgba(201,168,76,0.15)] py-4'
+                ? 'bg-white/95 backdrop-blur-xl shadow-md py-4'
                 : 'bg-transparent py-6'
                 }`}
         >
@@ -34,7 +45,7 @@ const Navbar = () => {
                     <a href="#inicio" className="flex items-center gap-3 group">
                         <div className={`w-10 h-10 rounded-sm flex items-center justify-center transition-all duration-500 ${scrolled ? 'bg-primary-deeper' : 'bg-white/10 backdrop-blur-sm border border-white/20'
                             }`}>
-                            <span className={`font-['Cormorant_Garamond'] text-lg font-bold ${scrolled ? 'text-accent' : 'text-accent'
+                            <span className={`font-['Cormorant_Garamond'] text-lg font-bold ${scrolled ? 'text-accent' : 'text-white'
                                 }`}>IL</span>
                         </div>
                         <div>
@@ -80,6 +91,7 @@ const Navbar = () => {
                             }`}
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Menú de navegación"
+                        aria-expanded={isOpen}
                     >
                         <div className="w-6 h-5 relative flex flex-col justify-between">
                             <motion.span
@@ -110,6 +122,7 @@ const Navbar = () => {
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                             className="lg:hidden overflow-hidden"
+                            role="menu"
                         >
                             <div className="pt-6 pb-4 space-y-1 text-center">
                                 {menuItems.map((item, index) => (
@@ -123,7 +136,8 @@ const Navbar = () => {
                                             ? 'text-primary-deeper border-warm-gray hover:text-accent'
                                             : 'text-white border-white/10 hover:text-accent'
                                             }`}
-                                        onClick={() => setIsOpen(false)}
+                                        onClick={closeMenu}
+                                        role="menuitem"
                                     >
                                         {item.name}
                                     </motion.a>
@@ -134,7 +148,8 @@ const Navbar = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.35 }}
                                     className="inline-block mt-4 px-6 py-3 bg-accent text-white text-sm tracking-wide"
-                                    onClick={() => setIsOpen(false)}
+                                    onClick={closeMenu}
+                                    role="menuitem"
                                 >
                                     Consulta Gratuita
                                 </motion.a>

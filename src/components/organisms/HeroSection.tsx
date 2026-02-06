@@ -9,7 +9,7 @@ const HeroSection = () => {
         >
             {/* Abstract Background Shapes - Refined */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary-light/10 blur-[100px] animate-pulse-slow" />
+                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary-light/10 blur-[100px]" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-accent/5 blur-[120px]" />
                 <div className="absolute top-[20%] right-[10%] w-[20vw] h-[20vw] rounded-full bg-white/5 blur-[80px]" />
             </div>
@@ -83,7 +83,7 @@ const HeroSection = () => {
                 transition={{ delay: 1.5, duration: 1 }}
                 className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             >
-                <span className="text-white/40 text-[10px] uppercase tracking-[0.2em] animate-pulse">Deslizar</span>
+                <span className="text-white/40 text-[10px] uppercase tracking-[0.2em] animate-pulse">Explorar</span>
                 <div className="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />
             </motion.div>
         </section>

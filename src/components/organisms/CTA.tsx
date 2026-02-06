@@ -53,7 +53,7 @@ const CTA = () => {
                         </Button>
 
                         <Button
-                            href="https://wa.me/56900000000"
+                            href="https://wa.me/56962420766"
                             variant="outline"
                             className="!text-primary-deeper !border-primary-deeper/20 hover:!border-accent hover:!text-accent"
                             icon={

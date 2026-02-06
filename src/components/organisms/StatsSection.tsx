@@ -52,7 +52,7 @@ const StatsSection = () => {
                                 : ''
                                 } ${index === 0 ? 'md:pl-0' : ''} ${index === items.length - 1 ? 'md:pr-0' : ''}`}
                         >
-                            <span className="text-6xl font-['Cormorant_Garamond'] font-bold text-warm-gray group-hover:text-accent/30 transition-colors duration-500">
+                            <span className="text-6xl font-['Cormorant_Garamond'] font-bold text-primary-deeper/15 group-hover:text-accent/30 transition-colors duration-500">
                                 {item.number}
                             </span>
                             <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-primary-deeper mt-4 mb-4">

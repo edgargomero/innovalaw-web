@@ -5,7 +5,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLSe
 }
 
 const Input = ({ as = 'input', className = '', ...props }: InputProps) => {
-    const baseStyles = "w-full px-4 py-3 bg-cream/50 border border-warm-gray text-slate text-sm focus:border-accent transition-colors outline-none cursor-pointer" // cursor-pointer generic, override if text
+    const baseStyles = "w-full px-4 py-3 bg-cream/50 border border-warm-gray text-slate text-sm transition-colors"
 
     if (as === 'textarea') {
         return (
