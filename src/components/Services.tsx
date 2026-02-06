@@ -44,20 +44,23 @@ const Services = () => {
     <section id="servicios" className="py-24 lg:py-32 bg-white relative noise">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="line-accent" />
               <span className="text-accent text-xs uppercase tracking-[0.3em]">
                 Áreas de Práctica
               </span>
+              <div className="line-accent" />
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.15] mb-6">
               Servicios jurídicos{' '}
               <span className="italic font-medium text-accent">especializados</span>
             </h2>
@@ -67,9 +70,8 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:pt-16"
           >
-            <p className="text-slate/80 text-base sm:text-lg leading-[1.8] max-w-md">
+            <p className="text-slate/80 text-base sm:text-lg leading-[1.8] max-w-xl mx-auto">
               Especialistas calificados en cada área del derecho, enfatizando ética,
               moral y buen gobierno corporativo en cada solución.
             </p>

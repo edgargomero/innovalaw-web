@@ -34,32 +34,43 @@ const About = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
-          {/* Left column */}
+        {/* Header - Centered */}
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-[1px] w-12 bg-accent" />
               <span className="text-accent text-xs uppercase tracking-[0.3em]">
                 Quiénes Somos
               </span>
+              <div className="h-[1px] w-12 bg-accent" />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-8">
               Más de una década{' '}
               <span className="italic font-medium text-accent-light">defendiendo</span>{' '}
               tus intereses
             </h2>
 
-            <p className="text-white/80 text-base sm:text-lg leading-[1.8] mb-12 max-w-lg">
+            <p className="text-white/80 text-base sm:text-lg leading-[1.8] max-w-2xl mx-auto">
               Somos un estudio jurídico diseñado para brindarte tranquilidad.
               Nuestro equipo de especialistas enfatiza ética, moral y buen gobierno
               corporativo en cada solución que construimos para ti.
             </p>
+          </motion.div>
+        </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-start">
+          {/* Left column - Features & CTA */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col gap-10 lg:pt-8"
+          >
             {/* Features list */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               {[

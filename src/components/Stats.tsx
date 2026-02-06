@@ -31,12 +31,13 @@ const Stats = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center justify-center gap-4 mb-16"
         >
           <div className="line-accent" />
           <span className="text-accent text-xs uppercase tracking-[0.3em]">
             Nuestro Diferencial
           </span>
+          <div className="line-accent" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
@@ -46,11 +47,10 @@ const Stats = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: index * 0.15 }}
-              className={`group relative py-12 md:py-14 md:px-10 h-full flex flex-col ${
-                index < items.length - 1
+              className={`group relative py-12 md:py-14 md:px-10 h-full flex flex-col items-center text-center ${index < items.length - 1
                   ? 'border-b md:border-b-0 md:border-r border-warm-gray'
                   : ''
-              } ${index === 0 ? 'md:pl-0' : ''} ${index === items.length - 1 ? 'md:pr-0' : ''}`}
+                } ${index === 0 ? 'md:pl-0' : ''} ${index === items.length - 1 ? 'md:pr-0' : ''}`}
             >
               <span className="text-6xl font-['Cormorant_Garamond'] font-bold text-warm-gray group-hover:text-accent/30 transition-colors duration-500">
                 {item.number}
