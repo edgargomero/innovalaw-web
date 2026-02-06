@@ -27,13 +27,13 @@ const CTA = () => {
             <div className="h-[1px] w-12 bg-accent" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05] mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.15] mb-10">
             ¿Necesitas{' '}
             <span className="italic font-medium text-accent">asesoría legal</span>
             ?
           </h2>
 
-          <p className="text-slate/50 text-lg leading-relaxed max-w-xl mx-auto mb-12">
+          <p className="text-slate/50 text-base sm:text-lg leading-[1.8] max-w-xl mx-auto mb-12">
             Agenda una consulta con nuestros especialistas y recibe orientación
             personalizada para tu caso. Sin compromiso.
           </p>

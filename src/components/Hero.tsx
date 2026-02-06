@@ -71,7 +71,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.95] font-bold text-white mb-8"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] font-bold text-white mb-12"
           >
             Protegemos{' '}
             <span className="italic font-medium text-accent-light">tus derechos</span>
@@ -84,7 +84,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg lg:text-xl text-white/70 max-w-xl mb-12 leading-relaxed"
+            className="text-lg lg:text-xl text-white/70 max-w-xl mb-16 leading-[1.8]"
           >
             Asesoramiento jurídico integral en migración, derecho corporativo,
             financiero y personas. Más de una década de compromiso con tu tranquilidad.

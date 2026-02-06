@@ -55,10 +55,10 @@ const Stats = () => {
               <span className="text-6xl font-['Cormorant_Garamond'] font-bold text-warm-gray group-hover:text-accent/30 transition-colors duration-500">
                 {item.number}
               </span>
-              <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-primary-deeper mt-4 mb-3">
+              <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-primary-deeper mt-6 mb-4">
                 {item.title}
               </h3>
-              <p className="text-slate/60 leading-relaxed text-sm">
+              <p className="text-slate/60 leading-[1.8] text-sm sm:text-base">
                 {item.text}
               </p>
             </motion.div>

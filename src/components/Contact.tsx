@@ -51,12 +51,12 @@ const Contact = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05] mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.15] mb-10">
               Conversemos sobre{' '}
               <span className="italic font-medium text-accent">tu caso</span>
             </h2>
 
-            <p className="text-slate/50 leading-relaxed mb-12 max-w-sm">
+            <p className="text-slate/50 leading-[1.8] text-sm sm:text-base mb-12 max-w-sm">
               Envíanos un mensaje y nos pondremos en contacto contigo a la brevedad.
               Tu primera consulta es sin compromiso.
             </p>

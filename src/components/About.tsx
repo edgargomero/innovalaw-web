@@ -48,13 +48,13 @@ const About = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-10">
               Más de una década{' '}
               <span className="italic font-medium text-accent-light">defendiendo</span>{' '}
               tus intereses
             </h2>
 
-            <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-lg">
+            <p className="text-white/50 text-base sm:text-lg leading-[1.8] mb-12 max-w-lg">
               Somos un estudio jurídico diseñado para brindarte tranquilidad.
               Nuestro equipo de especialistas enfatiza ética, moral y buen gobierno
               corporativo en cada solución que construimos para ti.
@@ -125,7 +125,7 @@ const About = () => {
                     <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-white mb-2 group-hover:text-accent-light transition-colors duration-300">
                       {value.title}
                     </h3>
-                    <p className="text-white/50 leading-relaxed text-sm">
+                    <p className="text-white/50 leading-[1.8] text-sm sm:text-base">
                       {value.text}
                     </p>
                   </div>
@@ -140,7 +140,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.9 }}
               className="p-6 sm:p-8 border-l-2 border-accent bg-accent/5"
             >
-              <p className="text-white/70 italic text-lg font-['Cormorant_Garamond'] leading-relaxed">
+              <p className="text-white/70 italic text-lg font-['Cormorant_Garamond'] leading-[1.8]">
                 "Nuestra misión es brindarte tranquilidad, asesoramiento y apoyo
                 en cada paso del camino."
               </p>

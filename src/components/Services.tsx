@@ -57,7 +57,7 @@ const Services = () => {
                 Áreas de Práctica
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.05]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-deeper leading-[1.15]">
               Servicios jurídicos{' '}
               <span className="italic font-medium text-accent">especializados</span>
             </h2>
@@ -69,7 +69,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:pt-16"
           >
-            <p className="text-slate/60 text-lg leading-relaxed max-w-md">
+            <p className="text-slate/60 text-base sm:text-lg leading-[1.8] max-w-md">
               Especialistas calificados en cada área del derecho, enfatizando ética,
               moral y buen gobierno corporativo en cada solución.
             </p>
@@ -86,7 +86,7 @@ const Services = () => {
               transition={{ duration: 0.7, delay: index * 0.1 }}
               className="group border-t border-warm-gray last:border-b"
             >
-              <div className="py-10 lg:py-14 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+              <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
                 {/* Number */}
                 <div className="md:col-span-1">
                   <span className="text-sm text-accent font-medium">{service.id}</span>
@@ -104,7 +104,7 @@ const Services = () => {
 
                 {/* Description */}
                 <div className="md:col-span-7 lg:col-span-4">
-                  <p className="text-slate/60 leading-relaxed">
+                  <p className="text-slate/60 leading-[1.8] text-sm sm:text-base">
                     {service.description}
                   </p>
                 </div>
