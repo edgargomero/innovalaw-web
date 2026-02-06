@@ -1,11 +1,13 @@
+import { lazy, Suspense } from 'react'
 import Navbar from './components/organisms/Navbar'
 import HeroSection from './components/organisms/HeroSection'
-import StatsSection from './components/organisms/StatsSection'
-import ServicesSection from './components/organisms/ServicesSection'
-import AboutSection from './components/organisms/AboutSection'
-import CTA from './components/organisms/CTA'
-import ContactSection from './components/organisms/ContactSection'
-import Footer from './components/organisms/Footer'
+
+const StatsSection = lazy(() => import('./components/organisms/StatsSection'))
+const ServicesSection = lazy(() => import('./components/organisms/ServicesSection'))
+const AboutSection = lazy(() => import('./components/organisms/AboutSection'))
+const CTA = lazy(() => import('./components/organisms/CTA'))
+const ContactSection = lazy(() => import('./components/organisms/ContactSection'))
+const Footer = lazy(() => import('./components/organisms/Footer'))
 
 function App() {
   return (
@@ -13,13 +15,17 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <StatsSection />
-        <ServicesSection />
-        <AboutSection />
-        <CTA />
-        <ContactSection />
+        <Suspense>
+          <StatsSection />
+          <ServicesSection />
+          <AboutSection />
+          <CTA />
+          <ContactSection />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense>
+        <Footer />
+      </Suspense>
     </div>
   )
 }
