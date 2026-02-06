@@ -24,8 +24,8 @@ const Stats = () => {
   ]
 
   return (
-    <section className="py-20 sm:py-24 md:py-32 lg:py-40 bg-warm-gray relative">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16" ref={ref}>
+    <section className="py-24 lg:py-32 bg-warm-gray relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ const Stats = () => {
               <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-primary-deeper mt-4 mb-4">
                 {item.title}
               </h3>
-              <p className="text-slate/60 leading-[1.8] text-sm sm:text-base">
+              <p className="text-slate/80 leading-[1.8] text-sm sm:text-base">
                 {item.text}
               </p>
             </motion.div>

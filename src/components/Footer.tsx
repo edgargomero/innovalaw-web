@@ -8,7 +8,7 @@ const Footer = () => {
       {/* Decorative top line */}
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
         <div className="py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-10">
           {/* Brand */}
@@ -30,11 +30,11 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-xs mb-6">
+            <p className="text-white/80 text-sm leading-relaxed max-w-xs mb-6">
               Estudio jurídico diseñado para brindarte tranquilidad,
               asesoramiento y apoyo en tus necesidades legales.
             </p>
-            <div className="flex items-center gap-2 text-white/30 text-sm">
+            <div className="flex items-center gap-2 text-white/70 text-sm">
               <svg className="w-4 h-4 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
@@ -63,7 +63,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-white/60 text-sm hover:text-accent transition-colors duration-300"
+                    className="text-white/80 text-sm hover:text-accent transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -93,7 +93,7 @@ const Footer = () => {
                 <li key={service}>
                   <a
                     href="#servicios"
-                    className="text-white/60 text-sm hover:text-accent transition-colors duration-300"
+                    className="text-white/80 text-sm hover:text-accent transition-colors duration-300"
                   >
                     {service}
                   </a>
@@ -117,7 +117,7 @@ const Footer = () => {
               href="https://instagram.com/innovalawcl"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 text-white/60 hover:text-accent transition-colors"
+              className="group flex items-center gap-3 text-white/80 hover:text-accent transition-colors"
             >
               <div className="w-10 h-10 border border-white/15 flex items-center justify-center group-hover:border-accent/30 transition-colors">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -131,10 +131,10 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="py-6 border-t border-white/15 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/60 text-xs tracking-wide">
+          <p className="text-white/80 text-xs tracking-wide">
             &copy; {currentYear} InnovaLaw. Todos los derechos reservados.
           </p>
-          <p className="text-white/50 text-xs tracking-wide">
+          <p className="text-white/70 text-xs tracking-wide">
             Diseñado con excelencia
           </p>
         </div>

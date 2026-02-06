@@ -24,7 +24,7 @@ const About = () => {
   ]
 
   return (
-    <section id="nosotros" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-primary-deeper relative overflow-hidden noise">
+    <section id="nosotros" className="py-24 lg:py-32 bg-primary-deeper relative overflow-hidden noise">
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-primary-dark/30 rounded-full blur-[120px]" />
@@ -33,7 +33,7 @@ const About = () => {
         <div className="absolute top-0 right-[30%] w-[1px] h-full bg-gradient-to-b from-transparent via-white/5 to-transparent hidden lg:block" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-10" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
           {/* Left column */}
           <motion.div
@@ -54,7 +54,7 @@ const About = () => {
               tus intereses
             </h2>
 
-            <p className="text-white/60 text-base sm:text-lg leading-[1.8] mb-12 max-w-lg">
+            <p className="text-white/80 text-base sm:text-lg leading-[1.8] mb-12 max-w-lg">
               Somos un estudio jurídico diseñado para brindarte tranquilidad.
               Nuestro equipo de especialistas enfatiza ética, moral y buen gobierno
               corporativo en cada solución que construimos para ti.
@@ -78,7 +78,7 @@ const About = () => {
                   <div className="w-5 h-5 rounded-full border border-accent/40 flex items-center justify-center flex-shrink-0">
                     <div className="w-1.5 h-1.5 bg-accent rounded-full" />
                   </div>
-                  <span className="text-white/60 text-sm">{feature}</span>
+                  <span className="text-white/80 text-sm">{feature}</span>
                 </motion.div>
               ))}
             </div>
@@ -125,7 +125,7 @@ const About = () => {
                     <h3 className="text-2xl font-['Cormorant_Garamond'] font-bold text-white mb-2 group-hover:text-accent-light transition-colors duration-300">
                       {value.title}
                     </h3>
-                    <p className="text-white/60 leading-[1.8] text-sm sm:text-base">
+                    <p className="text-white/80 leading-[1.8] text-sm sm:text-base">
                       {value.text}
                     </p>
                   </div>

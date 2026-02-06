@@ -31,11 +31,11 @@ const Contact = () => {
     },
   ]
 
-  const inputClasses = 'w-full px-1 sm:px-2 py-4 bg-transparent border-0 border-b border-warm-gray text-slate placeholder:text-slate/45 text-sm transition-all duration-300 focus:border-accent'
+  const inputClasses = 'w-full px-1 sm:px-2 py-4 bg-transparent border-0 border-b border-warm-gray text-slate placeholder:text-slate/60 text-sm transition-all duration-300 focus:border-accent'
 
   return (
-    <section id="contacto" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative noise">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <section id="contacto" className="py-24 lg:py-32 bg-white relative noise">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
           {/* Left column - Info */}
           <motion.div
@@ -56,7 +56,7 @@ const Contact = () => {
               <span className="italic font-medium text-accent">tu caso</span>
             </h2>
 
-            <p className="text-slate/50 leading-[1.8] text-sm sm:text-base mb-12 max-w-sm">
+            <p className="text-slate/80 leading-[1.8] text-sm sm:text-base mb-12 max-w-sm">
               Envíanos un mensaje y nos pondremos en contacto contigo a la brevedad.
               Tu primera consulta es sin compromiso.
             </p>
@@ -80,7 +80,7 @@ const Contact = () => {
                       {detail.label}
                     </span>
                     {detail.lines.map((line, i) => (
-                      <p key={i} className="text-slate/60 text-sm">
+                      <p key={i} className="text-slate/80 text-sm">
                         {detail.href ? (
                           <a href={detail.href} className="hover:text-accent transition-colors">{line}</a>
                         ) : line}
@@ -104,7 +104,7 @@ const Contact = () => {
                 href="https://instagram.com/innovalawcl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 text-slate/50 hover:text-accent transition-colors"
+                className="group inline-flex items-center gap-3 text-slate/80 hover:text-accent transition-colors"
               >
                 <div className="w-10 h-10 border border-warm-gray flex items-center justify-center group-hover:border-accent group-hover:bg-accent/5 transition-all">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-primary-deeper font-semibold text-sm">Mensaje enviado</p>
-                      <p className="text-slate/50 text-xs">Nos pondremos en contacto pronto.</p>
+                      <p className="text-slate/80 text-xs">Nos pondremos en contacto pronto.</p>
                     </div>
                   </div>
                 </motion.div>

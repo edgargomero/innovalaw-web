@@ -41,8 +41,8 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="servicios" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative noise">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <section id="servicios" className="py-24 lg:py-32 bg-white relative noise">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           <motion.div
@@ -69,7 +69,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:pt-16"
           >
-            <p className="text-slate/60 text-base sm:text-lg leading-[1.8] max-w-md">
+            <p className="text-slate/80 text-base sm:text-lg leading-[1.8] max-w-md">
               Especialistas calificados en cada área del derecho, enfatizando ética,
               moral y buen gobierno corporativo en cada solución.
             </p>
@@ -104,7 +104,7 @@ const Services = () => {
 
                 {/* Description */}
                 <div className="md:col-span-7 lg:col-span-4">
-                  <p className="text-slate/60 leading-[1.8] text-sm sm:text-base">
+                  <p className="text-slate/80 leading-[1.8] text-sm sm:text-base">
                     {service.description}
                   </p>
                 </div>
@@ -113,7 +113,7 @@ const Services = () => {
                 <div className="md:col-span-4 lg:col-span-3">
                   <ul className="space-y-2">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-slate/50 group-hover:text-slate/70 transition-colors">
+                      <li key={feature} className="flex items-center gap-2 text-sm text-slate/80 group-hover:text-slate/80 transition-colors">
                         <span className="w-1 h-1 bg-accent rounded-full flex-shrink-0" />
                         {feature}
                       </li>
@@ -128,7 +128,7 @@ const Services = () => {
                     whileHover={{ scale: 1.1 }}
                   >
                     <svg
-                      className="w-4 h-4 text-slate/60 group-hover:text-white transition-colors duration-300"
+                      className="w-4 h-4 text-slate/80 group-hover:text-white transition-colors duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
