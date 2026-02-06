@@ -24,7 +24,7 @@ const Stats = () => {
   ]
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-warm-gray relative">
+    <section className="py-20 sm:py-24 md:py-32 lg:py-40 bg-warm-gray relative">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16" ref={ref}>
         {/* Section label */}
         <motion.div

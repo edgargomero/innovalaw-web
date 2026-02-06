@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col">
       <Navbar />
       <Hero />
       <Stats />
@@ -18,7 +18,7 @@ function App() {
       <CTA />
       <Contact />
       <Footer />
-    </>
+    </div>
   )
 }
 

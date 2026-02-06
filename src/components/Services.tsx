@@ -41,7 +41,7 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="servicios" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white relative noise">
+    <section id="servicios" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative noise">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">

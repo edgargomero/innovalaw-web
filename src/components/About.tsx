@@ -24,7 +24,7 @@ const About = () => {
   ]
 
   return (
-    <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-primary-deeper relative overflow-hidden noise">
+    <section id="nosotros" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-primary-deeper relative overflow-hidden noise">
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-primary-dark/30 rounded-full blur-[120px]" />
